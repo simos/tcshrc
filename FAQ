@@ -1,0 +1,192 @@
+
+There should be a tutorial that explains all the nice functionalities of TCSH.
+And it should be written in DocBook also (to make a nice HowTo).
+Well, it is not here yet. Your choices are:
+
+a. Use this FAQ, if you have a question send it to the mailling list
+so that when it is answered it will be added to this FAQ
+
+b. Check the .tcshrc.* files, read the comments and try them at the same time!
+
+c. Read "man tcsh". This is the definite solution and will make you wise.
+I personally did this several years ago (tcsh 6.05), perhaps you will new
+functionality to add to the list.
+
+d. Check http://www.tcsh.org/. It has online tcsh books (in PostScript and PDF formats)
+that are available for free. No excuse not to learn tcsh.
+
+
+
+FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ
+
+1. When I try the completion, it does not work!
+
+A:
+You are doing:
+	cp /etc/passwd /etc/pa<TAB>
+
+The behaviour set in the .tcshrc files is to complete only in safe mode.
+This means that it is not sane to complete on existing files in this case.
+Use:
+	% cp /etc/passwd<ENTER>
+	cp: error blah blah
+	% <UP ARROW>
+	% cp /etc/passwd <F7>
+	% cp /etc/passwd /etc/passwd
+	% cp /etc/passwd /etc/passwd<.old>
+
+2. When I do "cd<TAB>", I only see directories. This is nice!
+
+A:
+This is part of the "completion" functionality, and it is configured
+in .tcshrc.complete
+
+3. I want slashdot on lynx quickly. How? (NOT AVAILABLE IN THIS VERSION)
+
+A:
+Do:
+	% ly<TAB>
+	% lynx 
+	% lynx <TAB>
+	slashdot.org www.freshmeat.net ...
+	% lynx sl<TAB>
+	% lynx slashdot.org
+	% lynx slashdot.org<ENTER>
+
+Should not take you more than one second.
+
+4. Auto-correction confuses me.
+
+A:
+Try this:
+	% cd /usr/locl/bin<ENTER>
+	
+	CORRECT> cd /usr/local/bin (y|n|e)?<SPACE> or <y>
+	%
+
+For the opposite, suppose you really want to make the directory /usr/locall
+
+	% mkdir /usr/locall<ENTER>
+
+	CORRECT> mkdir /usr/local (y|n|e)?<ENTER> or <n>
+	%
+
+5. Tell me about F7!
+
+A:
+	Without F7, you would do:
+	
+	% cd /tmp
+	% ls demodir
+	not found blah blah
+	% mkdir demodir
+	% cd demodir
+
+	With F7, you do:
+	
+	% cd /tmp
+	% ls demodir
+	not found blah blah
+	% mkdir <F7>
+	% mkdir demodir
+	% cd <F7>
+	% cd demodir
+	
+Try several times to get used to it.
+<F7> prints the last argument of the previous command.
+
+6. What do these lines mean?
+
+root has logged on pts/0 from :0.
+root has logged on pts/1 from :0.
+root has logged on tty1 from local.
+
+A: They are part of the "watch" facility.
+Whenever you run a command in tcsh, tcsh checks if someones has
+logged on/off the system. If so, it will print it here.
+It is quite handy to know what is going on your system.
+It is even handy if you run a non-networked system, to know where you
+have shells open.
+
+7. I was compiling an application and at the end of it I got
+Time spent in user mode   (CPU seconds) : 8.810s
+Time spent in kernel mode (CPU seconds) : 1.030s
+Total time                              : 0:11.66s
+CPU utilisation (percentage)            : 84.3%
+Times the process was swapped           : 0
+Times of major page faults              : 29424
+Times of minor page faults              : 28521
+
+A: These are some statistics that TCSH can provide (in a human readable manner)
+using a special command (time).
+With the current configuration, it is printed automatically whenever
+a process takes quite a bit of time to complete. It shows the time
+the process spent in kernel and user mode, the total time used for the
+process, the CPU utilisation (user+kernel time / total time) in %.
+The swapped times is the times the whole process was swapped.
+If you have plenty of memory, you usually get 0 here.
+For the page faults, a small operating system tutorial. In modern operating
+systems, memory is used in chunks called pages. These pages can be swapped
+to the swap partition to make space for other processes. When our process
+is running and it cannot find one of its "pages", it issues a "fault", or
+a "page fault" and makes arrangements to have the page up. The fewer the page
+faults, the better. The "page fault" terminology is a bit wierd and it comes
+from long time ago.
+NOTE: the amount of page faults look to me rather a lot, perhaps they are
+faults regarding the presense of the page in the memory cache and not the
+swap. If a kernel hacker knows about this stuff and can have a look in the
+source code of TCSH, please clarify this issue.
+
+8. I find it a bit awkward when I change back and forth directories.
+Any nice trick?
+
+A: You can use the "cd -" command. It takes you to the previous directory.
+Try it once more to take you to the initial directory.
+
+9. How can I access that "cd /usr/local/samba/lib/" command I type ages ago?
+
+As long as you remember the beginning of the command that resides in the
+history, you can access it quickly.
+
+Do:
+
+...
+cd /usr/local/samba/lib/
+...
+cd /usr/bin/
+...
+cd /etc/
+..
+
+Now you want to go to samba/lib.
+
+% cd <ESC p>
+% cd /etc/<ESC p>
+% cd /usr/bin/<ESC p>
+% cd /usr/local/samba/lib/<ENTER>
+
+That is, you press several times ESC p  to go to the Previous occurence
+of a similar command. If at some point you want to go to the next command
+in the history, hit ESC n
+
+10. What does ^G mean?
+
+Means you press Ctrl-G.
+Speaking of ^G, try
+
+% echo <^V><^G><ENTER>
+
+You will hear a BEEP.
+^V is used to "mask" the next character pressed.
+
+11. I want F12 to beep to me!
+
+You need to bind F12 with the beep. The beep is ^G.
+Do
+
+	% bindkey <^V><F12> <^G><ENTER>
+
+That's it.
+
+
+For more information, contact Simos Xenitellis <simos74@gmx.net>

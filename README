@@ -1,0 +1,28 @@
+
+This package has a set of configuration files for the TCSH (csh) shell.
+It makes heavy use of the nice features of TCSH.
+
+To use it, you need to be running the TCSH shell.
+Check your appropriate line in /etc/passwd to see if you run TCSH.
+If not, you may be able to use "chsh" to change to "/bin/tcsh".
+
+If you would like to use the configuration files in DEMO mode, I suggest
+the following.
+
+1. Open a new terminal window (or a new virtual console).
+2. Enter the directory with this package (where this file resides).
+3. Execute "setenv HOME `pwd`" to set the HOME variable to the current
+   directory.
+4. Then do: "source .tcshrc" to activate the new configuration.
+5. Now you are ready! You will see something like:
+
+Fri Aug 31 14:22:22 GMT 2000
+/home/user/tcshrc/tcshrc-0.3
+root has logged on pts/0 from :0.
+root has logged on pts/1 from :0.
+user has logged on tty1 from local.
+pc90:/home/user/tcshrc/tcshrc-0.3%  <- cursor is at this position, waiting.
+
+Now read the FAQ file on the new functionality and how to use it properly.
+
+For more information, contact Simos Xenitellis <simos74@gmx.net>

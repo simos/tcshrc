@@ -1,0 +1,9 @@
+#############################################################################
+##
+## .tcshrc.local	12Aug2004, Simos Xenitellis (simos74 at gmx dot net)
+##
+## This is the .tcshrc.local file, part of the TCSHRC project
+## at http://tcshrc.sourceforge.net
+##
+## Here you add your aliases, sets, completions and bindkeys that you want
+## to override from the default settings.

@@ -1,0 +1,815 @@
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V3.1//EN" [
+<!-- Title of document -->
+	<!ENTITY document-version "1.0">
+	<!ENTITY document-title "The tcshrc manual">
+	<!ENTITY document-description "A guide for the tcshrc package">
+]>
+  
+<BOOK ID="TCSHRC">
+  <BOOKINFO>
+    <TITLE>&document-title;</TITLE>
+    <SUBTITLE>&document-description;</SUBTITLE>
+    <DATE>2nd September 2001</DATE>
+    <ABBREV>tcshrc</ABBREV>
+    <AUTHORGROUP>
+      <AUTHOR>
+        <FIRSTNAME>Simeon</FIRSTNAME>
+	<SURNAME>Xenitellis</SURNAME>
+	<OTHERNAME>(Simos)</OTHERNAME>
+      </AUTHOR>
+      <AUTHOR>
+        <FIRSTNAME>Amine</FIRSTNAME>
+	<SURNAME>Chelghaf</SURNAME>
+      </AUTHOR>
+    </AUTHORGROUP>
+    <ABSTRACT>
+    <PARA>
+	This document serves as an introduction to the tcsh shell,
+	providing pointers to further documentation and
+	covering significant features of the tcshrc package.
+    </PARA>
+    <PARA>
+    The latest version of this document can be found at the tcshrc WWW site
+    at <EMPHASIS>http://tcshrc.sourceforge.net/</EMPHASIS>.
+    </PARA>
+    </ABSTRACT>
+    <ADDRESS><EMAIL>S.Xenitellis@rhbnc.ac.uk</EMAIL></ADDRESS>
+    <ADDRESS><EMAIL>chelghaf@yahoo.fr</EMAIL></ADDRESS>
+    <COPYRIGHT>
+    	<YEAR>2000, 2001</YEAR>
+	<HOLDER>Simeon (Simos) Xenitellis</HOLDER>
+	<HOLDER>Amine Chelghaf</HOLDER>
+    </COPYRIGHT>
+    <LEGALNOTICE>
+      <PARA>
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.1
+      or any later version published by the Free Software Foundation;
+      with no Invariant Sections, no Front-Cover Texts and 
+      no Back-Cover Texts. A copy of the license is available at
+      http://www.gnu.org/
+      </PARA>
+    </LEGALNOTICE>
+    <REVHISTORY>
+      <REVISION>
+        <REVNUMBER>0.5</REVNUMBER>
+	<DATE> 8th Dec 2000 </DATE>
+	<AUTHORINITIALS>simos at hellug dot gr</AUTHORINITIALS>
+	<REVREMARK>First public distribution</REVREMARK>
+      </REVISION>
+      <REVISION>
+        <REVNUMBER>0.6</REVNUMBER>
+	<DATE> 22nd Jan 2001 </DATE>
+	<AUTHORINITIALS>simos at hellug dot gr</AUTHORINITIALS>
+	<REVREMARK>Documentation of the F* keys, addition of CSH/TCSH book, tcsh mailling list.</REVREMARK>
+      </REVISION>
+      <REVISION>
+        <REVNUMBER>1.0</REVNUMBER>
+	<DATE> 2nd Sep 2001 </DATE>
+	<AUTHORINITIALS>simos at hellug dot gr</AUTHORINITIALS>
+	<REVREMARK>Added documentation for the installation, tcshrc_config utility.</REVREMARK>
+      </REVISION>
+    </REVHISTORY>
+  </BOOKINFO> 
+
+
+<CHAPTER>
+<TITLE>Shells</TITLE>
+<PARA>
+The shell is an interface to the operating system just like the graphic user interface
+(<ACRONYM>GUI</ACRONYM>) is.
+Typically, the shell acts as a command interpreter;
+it takes each command and passes it to the operating system. It then
+displays the results of this operation on your screen.
+</PARA>
+<PARA>
+The most common shells are
+<ITEMIZEDLIST>
+<LISTITEM>
+	<PARA>
+	Bourne shell (sh)
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+	C shell (csh)
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+	Korn shell (ksh)
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+	TC Shell (tcsh)
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+	Bourne Again Shell (bash)
+	</PARA>
+</LISTITEM>
+</ITEMIZEDLIST>
+</PARA>
+
+<PARA>
+To identify which shell you are currently running, you may type 
+in your current shell
+<USERINPUT>echo $shell</USERINPUT>
+</PARA>
+
+<PARA>
+Historically, the shell came before the GUI, however the latter has become more popular
+since it allows in several cases easier usage of a computer. In reality, the shell
+is well-suited in specific types of usage and extra functionality that it may provide
+can make it quite productive.
+</PARA>
+
+<PARA>
+This document describes the tcshrc project, a project that demonstrates exactly this
+extra functionality of the tcsh shell and makes it more accesible to the end user.
+</PARA>
+</CHAPTER>
+
+<CHAPTER>
+<TITLE>Basic resources on Unix, shells and the tcsh shell</TITLE>
+<PARA>
+As basic reference, the reader is advised to read the following
+
+<ITEMIZEDLIST>
+<LISTITEM>
+	<PARA>
+        The <ULINK URL="http://www.primate.wisc.edu/software/csh-tcsh-book/">
+	Using csh &amp; tcsh</ULINK> handbook from O`Reilly is the definitive hard-copy manual for csh
+	and tcsh. At the mentioned URL one can find some electronic versions of documentation
+	of csh and tcsh.
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+        <ULINK URL="http://www.mhpcc.edu/training/vitecbids/UnixIntro/UnixIntro.html">
+	UnixIntro</ULINK> is a gentle introduction to Unix. It has a chapter dedicated to shells
+	and provides an HTML version of the tcsh man page.	
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+	The Unix FAQ is available at the <ULINK URL="news:comp.answers">
+	comp.answers</ULINK> newsgroup. It is excellent to read, especially
+	if you have tried to use Unix and have questions that you want answered.
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+ 	The <ULINK URL="http://www.ibiblio.org/pub/Linux/docs/HOWTO/mini/other-formats/html_single/Path.html">
+	Path HowTo</ULINK> describes common tricks and problems with Unix or Linux environment variables
+	and it focuses on the PATH variable.
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+ 	A further link that describes how to add search directories in the PATH variable is the
+ 	<ULINK URL="http://www.ecn.purdue.edu/ECN/Newsletters/1996.September/Search_Path_Essentials">
+	Search Path Essentials link</ULINK>.
+	</PARA>
+</LISTITEM>
+<LISTITEM>
+	<PARA>
+	The tcsh man pages is an invaluable source of information on the extra features of tcsh.
+	It is recommended for the reader to walk through the sections of the man pages and use the features
+	while reading.
+	</PARA>
+</LISTITEM>
+</ITEMIZEDLIST>
+</PARA>
+
+<PARA>
+	There is a development mailling list on tcsh. To find more information on how to subscribe,
+send an e-mail to <ULINK URL="mailto:listserv@mx.gw.com">listserv@mx.gw.com</ULINK> and put the word <emphasis>help</emphasis>
+in the message body.
+</PARA>
+<PARA>
+The author and developer of tcsh is Christos Zoulas. He is available at the mentioned mailling list.
+</PARA>
+
+</CHAPTER>
+
+<CHAPTER>
+<TITLE>Installation of the tcshrc package</TITLE>
+<PARA>
+To install the tcshrc package for your current account, choose from the
+following scenarios.
+</PARA>
+
+<SECT1>
+<TITLE>I want a quick installation for my account only.</TITLE>
+
+<PARA>
+<USERINPUT>make install</USERINPUT> at your command prompt.
+</PARA>
+
+<PARA>The above command essentially keeps a backup of the existing <FILENAME>.tcshrc</FILENAME>,
+if there is one, as <FILENAME>.tcshrc.ORIGINAL</FILENAME>. If such a backup file already exists,
+no backup is kept in order not to remove the initial .tcshrc file while doing
+repetitive installations.
+</PARA>
+
+<PARA>
+To make a backup of your existing .tcshrc file
+
+<LITERALLAYOUT>
+<PROMPT>%</PROMPT> <USERINPUT>cd</USERINPUT>
+<PROMPT>%</PROMPT> <USERINPUT>cp .tcshrc .tcshrc.ORIGINAL</USERINPUT>
+</LITERALLAYOUT>
+</PARA>
+
+</SECT1>
+
+<SECT1>
+<TITLE>I want to make a system installation</TITLE>
+<PARA>
+To make a system installation, type
+
+<LITERALLAYOUT>
+<PROMPT>#</PROMPT> <USERINPUT>make systeminstall</USERINPUT>
+</LITERALLAYOUT>
+
+AND ALSO use the <FILENAME>tcshrc_config</FILENAME> configuration utility
+with the -s (--system) option to populate <FILENAME
+CLASS=DIRECTORY>/etc/skel</FILENAME>.
+
+</PARA>
+<PARA>
+This installs tcshrc in $(PREFIX)/share/tcshrc/ and adds the
+<FILENAME>tcshrc_config</FILENAME> configuration utility in $(PREFIX)/bin.
+The <FILENAME>tcshrc_config</FILENAME> utility can be used to make the
+installation in the <FILENAME CLASS=DIRECTORY>/etc/skel</FILENAME>.
+Finally, tell your users that they can add tcshrc to their existing accounts 
+by running 
+
+<LITERALLAYOUT>
+<PROMPT>%</PROMPT> <USERINPUT>tcshrc_config --user</USERINPUT>
+</LITERALLAYOUT>
+
+</PARA>
+
+<NOTE>
+<PARA>
+	The <FILENAME>tcshrc_config</FILENAME> configuration utility is usually
+placed in <FILENAME CLASS=DIRECTORY>/usr/local/bin</FILENAME> which is not in
+the path in default Unix installations. You can invoke the utility using the 
+absolute path as in 
+
+<LITERALLAYOUT>
+<PROMPT>%</PROMPT> <USERINPUT>/usr/local/bin/tcshrc_config --user</USERINPUT>
+</LITERALLAYOUT>
+</PARA>
+</NOTE>
+</SECT1>
+
+</CHAPTER>
+
+<CHAPTER>
+<TITLE>tcshrc FAQ and features</TITLE>
+<PARA>
+For a full list of the tcshrc features of tcsh that are made available,
+you should consult the <FILENAME>.tcshrc.*</FILENAME> files and the tcsh
+man pages. Moreover, there must be a book on the subject from the favourite bookshop. 
+</PARA>
+
+<qandaset defaultlabel='qanda'>
+<qandaentry>
+<question>
+<para>
+I did "tar xvfz tcshrc-0.x.tar.gz" and I did not find any RC files!
+</para>
+</question>
+<answer>
+<para>
+The RC files start with a dot, which means that you need to do
+<LITERALLAYOUT>
+<PROMPT>%</PROMPT> <USERINPUT>ls -al</USERINPUT>
+</LITERALLAYOUT>
+to see them.
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+When I try the completion, it does not work!
+</para>
+</question>
+<answer>
+<para>
+You are doing
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT><USERINPUT>cp /etc/passwd /etc/pa&lt;TAB&gt;</USERINPUT>
+</LITERALLAYOUT>
+
+The behaviour set in the .tcshrc files is to complete only in safe mode.
+This means that it is not sane to complete on existing files in this case.
+</para>
+<para>
+Use
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT>cp /etc/passwd&lt;ENTER&gt;</USERINPUT>
+	cp: error blah blah
+	<PROMPT>%</PROMPT> <USERINPUT>&lt;UP ARROW&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cp /etc/passwd <USERINPUT>&lt;F7&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cp /etc/passwd /etc/passwd<USERINPUT>&lt;ENTER&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cp /etc/passwd /etc/passwd<USERINPUT>&lt;.old&gt;</USERINPUT>
+</LITERALLAYOUT>
+
+The F7 key prints the last argument of the previous command.
+</para>
+</answer>
+</qandaentry>
+
+
+
+<qandaentry>
+<question>
+<para>
+When I do "cd&lt;TAB&gt;", I only see directories. This is nice!
+</para>
+</question>
+<answer>
+<para>
+This is part of the <EMPHASIS>completion</EMPHASIS> functionality, and it is configured
+in <FILENAME>.tcshrc.complete</FILENAME>.
+</para>
+</answer>
+</qandaentry>
+
+
+
+<qandaentry>
+<question>
+<para>
+Auto-correction confuses me.
+</para>
+</question>
+<answer>
+<para>
+Try this
+
+<LITERALLAYOUT>
+<PROMPT>%</PROMPT> <USERINPUT>cd /usr/locl/bin&lt;ENTER&gt;</USERINPUT>
+	CORRECT&gt; cd /usr/local/bin (y|n|e)?<USERINPUT>&lt;SPACE&gt;</USERINPUT> or <USERINPUT>&lt;y&gt;</USERINPUT>
+<PROMPT>%</PROMPT>
+</LITERALLAYOUT>
+</para>
+<para>
+For the opposite, suppose you really want to make the directory 
+<FILENAME>/usr/locall</FILENAME>
+
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT>mkdir /usr/locall&lt;ENTER&gt;</USERINPUT>
+	CORRECT&gt; mkdir /usr/local (y|n|e)?&lt;ENTER&gt; or &lt;n&gt;
+	<PROMPT>%</PROMPT>
+</LITERALLAYOUT>
+
+Consider that the SPACE key means <EMPHASIS>acceptance of suggestion</EMPHASIS>
+while the ENTER key means <EMPHASIS>forcing what we wrote</EMPHASIS>.
+</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para>
+What does the F1 key do?
+</para>
+</question>
+<answer>
+<para>
+It prints the man page (if there is one) of the current command you are trying to execute. It is used like in the following.
+
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> ncftp&lt;F1&gt;</USERINPUT>
+
+	<emphasis>the command "man ncftp" is executed. once you have found the information 
+	you are interested in, you may hit <USERINPUT>q</USERINPUT> and continue
+	editing the command line.</emphasis>
+	<PROMPT>%</PROMPT> ncftp
+</LITERALLAYOUT>
+	
+It does not disturb the command you are current editing. At present, the <emphasis>man</emphasis>
+application is used to provide full help documentation. Another option is to use <emphasis>whatis</emphasis>.
+If you are aware of a utility that provides short help of up to 15 lines for typical UNIX commands,
+the author would be glad to hear about.
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What do the F2 and F3 keys do?
+</para>
+</question>
+<answer>
+<para>
+Suppose you are editing a long line. F2 sets a mark to the command line while F3 is used to switch between
+the current position and the marked position.
+
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What does the F4 key do?
+</para>
+</question>
+<answer>
+<para>
+Currently nothing.
+
+</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para>
+What do F5 and F6 do?
+</para>
+</question>
+<answer>
+<para>
+F5 does a spelling check on the current line while F6 spell-checks the current word the cursor is at.
+Spelling is typically done by checking that filenames or directories exist. You may find it usufull when you type
+a long command line without hitting the TAB key and you notice that some filenames are not correct.
+
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd /usr/loca/bin&lt;F5&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd /usr/local/bin</USERINPUT>
+</LITERALLAYOUT>
+</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para>
+What does the F7 key do?
+</para>
+</question>
+<answer>
+<para>
+Without F7, you would do
+
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd /tmp</USERINPUT>
+	<PROMPT>%</PROMPT> <USERINPUT> ls demodir</USERINPUT>
+	not found blah blah
+	<PROMPT>%</PROMPT> <USERINPUT> mkdir demodir</USERINPUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd demodir</USERINPUT>
+
+	With F7, you do:
+	
+	<PROMPT>%</PROMPT> <USERINPUT> cd /tmp</USERINPUT>
+	<PROMPT>%</PROMPT> <USERINPUT> mkdir demodir</USERINPUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd &lt;F7&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd demodir<USERINPUT>&lt;ENTER&gt;</USERINPUT>
+</LITERALLAYOUT>
+	
+Try several times to get used to it.
+F7 prints the last argument of the previous command.
+</para>
+</answer>
+</qandaentry>
+
+
+
+<qandaentry>
+<question>
+<para>
+What does F8 do?
+</para>
+</question>
+<answer>
+<para>
+F8 searches the command history for commands that match the current line,
+up to the cursor. For example, suppose we want to invoke the history line 18.
+In a real case, we do not need to type <emphasis>history</emphasis> to check
+out the previous commands. We typically remember them. 
+
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> history&lt;ENTER&gt;</USERINPUT>
+    17	21:54   clear	
+    18	21:59	cd /usr/local/samba/bin
+    19	21:59	ls -l
+    20	22:00	cd ../lib
+    21	22:02	vi *
+    22	22:02	cd
+    23	22:02	smbclient -L //SERVER/share -U test
+    24	22:02	history
+
+	<PROMPT>%</PROMPT> <USERINPUT> cd&lt;F8&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd
+	<PROMPT>%</PROMPT> cd <USERINPUT>&lt;F8&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd ../lib
+	<PROMPT>%</PROMPT> cd ../lib<USERINPUT> &lt;F8&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd /usr/local/samba/bin
+</LITERALLAYOUT>
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What does F9 do?
+</para>
+</question>
+<answer>
+<para>
+It simply clear the current screen. It is smarter than a simple <application>clear</application>
+command, it does not affect the current line you are editing.
+
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What does F10 do?
+</para>
+</question>
+<answer>
+<para>
+<application>ls -l</application> is among the most common commands one typically types.
+F10 does just that, it executes that command. This one does affect the current line you are editing.
+A workaround is sought that does not affect the current line.
+
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What does F11 do?
+</para>
+</question>
+<answer>
+<para>
+It shows the current load of the system and like F9, it does not affect the current line you are editing.
+On the other hand it does not appear to be enabled on Linux. It remains there until a solution is found.
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What does F12 do?
+</para>
+</question>
+<answer>
+<para>
+It does standard completion, irrelevant of the smart and configurable  completion that tcsh provides.
+There are some cases that the smart completion is not smart enough. This is where F12 comes in. For example,
+suppose you have a file called lynx_bookmarks.html and you want to make a backup adding an extension. You may use
+the trick described elsewhere in this FAQ, using the F7 key, or you can do the following.
+
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cp ly&lt;TAB&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd lynx_bookmarks.html
+	<PROMPT>%</PROMPT> cd lynx_bookmarks.html<USERINPUT> ly&lt;F12&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd lynx_bookmarks.html lynx_bookmarks.html<USERINPUT>.old&lt;ENTER&gt;</USERINPUT>
+</LITERALLAYOUT>
+
+</para>
+</answer>
+</qandaentry>
+
+
+
+
+
+
+
+<qandaentry>
+<question>
+<para>
+What do these lines mean?
+
+<literallayout>
+root has logged on pts/0 from :0.
+root has logged on pts/1 from :0.
+root has logged on tty1 from local.
+</literallayout>
+</para>
+</question>
+<answer>
+<para>
+They are part of the <EMPHASIS>watch</EMPHASIS> facility.
+Whenever you run a command in tcsh, tcsh checks if someones has
+logged on/off the system. If so, it will print it here.
+It is quite handy to know what is going on your system.
+It is even handy if you run a non-networked system, to know where you
+have shells open.
+</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para>
+I was compiling an application and at the end of it I got
+
+<literallayout>
+Time spent in user mode   (CPU seconds) : 8.810s
+Time spent in kernel mode (CPU seconds) : 1.030s
+Total time                              : 0:11.66s
+CPU utilisation (percentage)            : 84.3%
+Times the process was swapped           : 0
+Times of major page faults              : 29424
+Times of minor page faults              : 28521
+</literallayout>
+
+</para>
+</question>
+<answer>
+<para>
+These are some statistics that TCSH can provide (in a human readable manner)
+using a special command (time).
+With the current configuration, it is printed automatically whenever
+a process takes quite a bit of time to complete. It shows the time
+the process spent in kernel and user mode, the total time used for the
+process, the CPU utilisation (user+kernel time / total time) in %.
+The swapped times is the times the whole process was swapped.
+If you have plenty of memory, you usually get 0 here.
+</para>
+<para>
+For the page faults, a small operating system tutorial. In modern operating
+systems, memory is used in chunks called pages. These pages can be swapped
+to the swap partition to make space for other processes. When our process
+is running and it cannot find one of its <emphasis>pages</emphasis>, 
+it issues a <emphasis>fault</emphasis>, or
+a <emphasis>page fault</emphasis> and makes arrangements to have the page up. 
+The fewer the page faults, the better. The <emphasis>page fault</emphasis> 
+terminology is a bit wierd and it comes from long time ago.
+
+<NOTE>
+<PARA>the amount of page faults look to me rather a lot, perhaps they are
+faults regarding the presense of the page in the memory cache and not the
+swap. If a kernel hacker knows about this stuff and can have a look in the
+source code of TCSH, please clarify this issue.
+</PARA>
+</NOTE>
+</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para>
+I find it a bit awkward when I change back and forth directories.
+Any nice trick?
+</para>
+</question>
+<answer>
+<para>
+You can use the <emphasis>cd -</emphasis> command. It takes you to the previous directory.
+Try it once more to take you to the initial directory.
+</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para>
+How can I access that <EMPHASIS>cd /usr/local/samba/lib/</EMPHASIS> command I type ages ago?
+</para>
+</question>
+<answer>
+<para>
+As long as you remember the beginning of the command that resides in the
+history, you can access it quickly.
+</para>
+<para>
+Do
+
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd /usr/local/samba/lib/</USERINPUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd /usr/local/bin/</USERINPUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd /etc/</USERINPUT>
+</LITERALLAYOUT>
+</para>
+
+<para>
+Now you want to go to samba/lib.
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> cd &lt;ESC p&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd /etc<USERINPUT>&lt;ESC p&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd /usr/local/bin<USERINPUT>&lt;ESC p&gt;</USERINPUT>
+	<PROMPT>%</PROMPT> cd /usr/local/samba/lib
+</LITERALLAYOUT>
+
+That is, you press several times ESC p  to go to the Previous occurence
+of a similar command. If at some point you want to go to the next command
+in the history, hit ESC n.
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+What does ^G mean?
+</para>
+</question>
+<answer>
+<para>
+Means you press Ctrl-G.
+Speaking of ^G, try
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT> echo &lt;^V&gt;&lt;^G&gt;&lt;ENTER&gt;</USERINPUT>
+</LITERALLAYOUT>
+
+You will hear a BEEP.
+^V is used to <emphasis>mask</emphasis> the next character pressed.
+
+</para>
+</answer>
+</qandaentry>
+
+
+
+<qandaentry>
+<question>
+<para>
+I want F4 to beep to me!
+</para>
+</question>
+<answer>
+<para>
+You need to bind F4 with the beep. Beep is ^G.
+Do
+<LITERALLAYOUT>
+	<PROMPT>%</PROMPT> <USERINPUT>bindkey -c &lt;^V&gt;&lt;F4&gt; "echo -n &lt;^V&gt;&lt;^G&gt;"&lt;ENTER&gt;</USERINPUT>
+</LITERALLAYOUT>
+
+That's it. You need to use it on an empty command line.
+
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+How can I traverse the history (backwards and forwards) restricting the search to what I have typed until now?
+</para>
+</question>
+<answer>
+<para>
+This is similar to the F8 key that goes only backwards. Check the question on the F8 key. 
+</para>
+<para>
+To go backwards, use the <USERINPUT>ESC p</USERINPUT> combination. 
+To go forwards, use the <USERINPUT>ESC n</USERINPUT> combination. 
+p is for previous and n for next. You hit first ESC, then you hit either p or n.
+
+</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para>
+How can I make it so that these .tcshrc* files are added to each newly created user?
+</para>
+</question>
+<answer>
+<para>
+You need to copy them to the <FILENAME CLASS="DIRECTORY">/etc/skel</FILENAME> directory.
+Then, the utility that creates new users will automatically include the tcsh
+configuration files. We assume that the tcsh shell has been chosen for the new user.
+In the future a script will be written that installs these files on a per-user basis.
+</para>
+</answer>
+</qandaentry>
+
+
+</qandaset>
+
+</CHAPTER>
+
+</BOOK>

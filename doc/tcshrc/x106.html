@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML
+><HEAD
+><TITLE
+>I want to make a system installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.59"><LINK
+REL="HOME"
+TITLE="The tcshrc manual"
+HREF="tcshrc.html"><LINK
+REL="UP"
+TITLE="Installation of the tcshrc package"
+HREF="c90.html"><LINK
+REL="PREVIOUS"
+TITLE="Installation of the tcshrc package"
+HREF="c90.html"><LINK
+REL="NEXT"
+TITLE="tcshrc FAQ and features"
+HREF="c128.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The tcshrc manual: A guide for the tcshrc package</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c90.html"
+>&#60;&#60;&#60; Previous</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Installation of the tcshrc package</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c128.html"
+>Next &#62;&#62;&#62;</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN106"
+>I want to make a system installation</A
+></H1
+><P
+>To make a system installation, type
+
+<P
+CLASS="LITERALLAYOUT"
+><TT
+CLASS="PROMPT"
+>#</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>make systeminstall</B
+></TT
+></P
+>
+
+AND ALSO use the <TT
+CLASS="FILENAME"
+>tcsh_config</TT
+> configuration utility
+with the -s (--system) option to populate <TT
+CLASS="FILENAME"
+>/etc/skel</TT
+>.&#13;</P
+><P
+>This installs tcshrc in $(PREFIX)/share/tcshrc/ and adds the
+<TT
+CLASS="FILENAME"
+>tcsh_config</TT
+> configuration utility in $(PREFIX)/bin.
+The <TT
+CLASS="FILENAME"
+>tcsh_config</TT
+> utility can be used to make the
+installation in the <TT
+CLASS="FILENAME"
+>/etc/skel</TT
+>.
+Finally, tell your users that they can add tcshrc to their existing accounts 
+by running 
+
+<P
+CLASS="LITERALLAYOUT"
+><TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>tcsh_config --user</B
+></TT
+></P
+>&#13;</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="./stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	The <TT
+CLASS="FILENAME"
+>tcsh_config</TT
+> configuration utility is usually
+placed in <TT
+CLASS="FILENAME"
+>/usr/local/bin</TT
+> which is not in
+the path in default Unix installations. You can invoke the utility using the 
+absolute path as in 
+
+<P
+CLASS="LITERALLAYOUT"
+><TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>/usr/local/bin/tcsh_config --user</B
+></TT
+></P
+></P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c90.html"
+>&#60;&#60;&#60; Previous</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="tcshrc.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c128.html"
+>Next &#62;&#62;&#62;</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installation of the tcshrc package</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c90.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>tcshrc FAQ and features</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

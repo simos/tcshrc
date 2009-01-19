@@ -1,0 +1,1381 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML
+><HEAD
+><TITLE
+>tcshrc FAQ and features</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.59"><LINK
+REL="HOME"
+TITLE="The tcshrc manual"
+HREF="tcshrc.html"><LINK
+REL="PREVIOUS"
+TITLE="I want to make a system installation"
+HREF="x106.html"></HEAD
+><BODY
+CLASS="CHAPTER"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>The tcshrc manual: A guide for the tcshrc package</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x106.html"
+>&#60;&#60;&#60; Previous</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="AEN128"
+>tcshrc FAQ and features</A
+></H1
+><P
+>For a full list of the tcshrc features of tcsh that are made available,
+you should consult the <TT
+CLASS="FILENAME"
+>.tcshrc.*</TT
+> files and the tcsh
+man pages. Moreover, there must be a book on the subject from the favourite bookshop. </P
+><DIV
+CLASS="QANDASET"
+><DL
+><DT
+>Q: <A
+HREF="c128.html#AEN134"
+>I did "tar xvfz tcshrc-0.x.tar.gz" and I did not find any RC files!</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN142"
+>When I try the completion, it does not work!</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN162"
+>When I do "cd&#60;TAB&#62;", I only see directories. This is nice!</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN169"
+>Auto-correction confuses me.</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN188"
+>What does the F1 key do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN201"
+>What do the F2 and F3 keys do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN206"
+>What does the F4 key do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN211"
+>What do F5 and F6 do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN221"
+>What does the F7 key do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN243"
+>What does F8 do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN261"
+>What does F9 do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN267"
+>What does F10 do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN273"
+>What does F11 do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN278"
+>What does F12 do?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN291"
+>What do these lines mean?
+
+<P
+CLASS="LITERALLAYOUT"
+>root&nbsp;has&nbsp;logged&nbsp;on&nbsp;pts/0&nbsp;from&nbsp;:0.<br>
+root&nbsp;has&nbsp;logged&nbsp;on&nbsp;pts/1&nbsp;from&nbsp;:0.<br>
+root&nbsp;has&nbsp;logged&nbsp;on&nbsp;tty1&nbsp;from&nbsp;local.</P
+></A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN298"
+>I was compiling an application and at the end of it I got
+
+<P
+CLASS="LITERALLAYOUT"
+>Time&nbsp;spent&nbsp;in&nbsp;user&nbsp;mode&nbsp;&nbsp;&nbsp;(CPU&nbsp;seconds)&nbsp;:&nbsp;8.810s<br>
+Time&nbsp;spent&nbsp;in&nbsp;kernel&nbsp;mode&nbsp;(CPU&nbsp;seconds)&nbsp;:&nbsp;1.030s<br>
+Total&nbsp;time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;0:11.66s<br>
+CPU&nbsp;utilisation&nbsp;(percentage)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;84.3%<br>
+Times&nbsp;the&nbsp;process&nbsp;was&nbsp;swapped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;0<br>
+Times&nbsp;of&nbsp;major&nbsp;page&nbsp;faults&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;29424<br>
+Times&nbsp;of&nbsp;minor&nbsp;page&nbsp;faults&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;28521</P
+>&#13;</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN311"
+>I find it a bit awkward when I change back and forth directories.
+Any nice trick?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN317"
+>How can I access that <I
+CLASS="EMPHASIS"
+>cd /usr/local/samba/lib/</I
+> command I type ages ago?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN340"
+>What does ^G mean?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN349"
+>I want F4 to beep to me!</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN357"
+>How can I traverse the history (backwards and forwards) restricting the search to what I have typed until now?</A
+></DT
+><DT
+>Q: <A
+HREF="c128.html#AEN365"
+>How can I make it so that these .tcshrc* files are added to each newly created user?</A
+></DT
+></DL
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN134"
+></A
+><B
+>Q: I did "tar xvfz tcshrc-0.x.tar.gz" and I did not find any RC files!</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>The RC files start with a dot, which means that you need to do
+<P
+CLASS="LITERALLAYOUT"
+><TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>ls -al</B
+></TT
+></P
+>
+to see them.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN142"
+></A
+><B
+>Q: When I try the completion, it does not work!</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>You are doing
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+><TT
+CLASS="USERINPUT"
+><B
+>cp /etc/passwd /etc/pa&#60;TAB&#62;</B
+></TT
+></P
+>
+
+The behaviour set in the .tcshrc files is to complete only in safe mode.
+This means that it is not sane to complete on existing files in this case.</P
+><P
+>Use
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>cp /etc/passwd&#60;ENTER&#62;</B
+></TT
+><br>
+	cp:&nbsp;error&nbsp;blah&nbsp;blah<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>&#60;UP ARROW&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cp&nbsp;/etc/passwd&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>&#60;F7&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cp&nbsp;/etc/passwd&nbsp;/etc/passwd<TT
+CLASS="USERINPUT"
+><B
+>&#60;ENTER&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cp&nbsp;/etc/passwd&nbsp;/etc/passwd<TT
+CLASS="USERINPUT"
+><B
+>&#60;.old&#62;</B
+></TT
+></P
+>
+
+The F7 key prints the last argument of the previous command.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN162"
+></A
+><B
+>Q: When I do "cd&#60;TAB&#62;", I only see directories. This is nice!</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>This is part of the <I
+CLASS="EMPHASIS"
+>completion</I
+> functionality, and it is configured
+in <TT
+CLASS="FILENAME"
+>.tcshrc.complete</TT
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN169"
+></A
+><B
+>Q: Auto-correction confuses me.</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>Try this
+
+<P
+CLASS="LITERALLAYOUT"
+><TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>cd /usr/locl/bin&#60;ENTER&#62;</B
+></TT
+><br>
+	CORRECT&#62;&nbsp;cd&nbsp;/usr/local/bin&nbsp;(y|n|e)?<TT
+CLASS="USERINPUT"
+><B
+>&#60;SPACE&#62;</B
+></TT
+>&nbsp;or&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>&#60;y&#62;</B
+></TT
+><br>
+<TT
+CLASS="PROMPT"
+>%</TT
+></P
+></P
+><P
+>For the opposite, suppose you really want to make the directory 
+<TT
+CLASS="FILENAME"
+>/usr/locall</TT
+>
+
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>mkdir /usr/locall&#60;ENTER&#62;</B
+></TT
+><br>
+	CORRECT&#62;&nbsp;mkdir&nbsp;/usr/local&nbsp;(y|n|e)?&#60;ENTER&#62;&nbsp;or&nbsp;&#60;n&#62;<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+></P
+>
+
+Consider that the SPACE key means <I
+CLASS="EMPHASIS"
+>acceptance of suggestion</I
+>
+while the ENTER key means <I
+CLASS="EMPHASIS"
+>forcing what we wrote</I
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN188"
+></A
+><B
+>Q: What does the F1 key do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>It prints the man page (if there is one) of the current command you are trying to execute. It is used like in the following.
+
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> ncftp&#60;F1&#62;</B
+></TT
+><br>
+<br>
+	<I
+CLASS="EMPHASIS"
+>the command "man ncftp" is executed. once you have found the information 
+	you are interested in, you may hit <TT
+CLASS="USERINPUT"
+><B
+>q</B
+></TT
+> and continue
+	editing the command line.</I
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;ncftp</P
+>
+	
+It does not disturb the command you are current editing. At present, the <I
+CLASS="EMPHASIS"
+>man</I
+>
+application is used to provide full help documentation. Another option is to use <I
+CLASS="EMPHASIS"
+>whatis</I
+>.
+If you are aware of a utility that provides short help of up to 15 lines for typical UNIX commands,
+the author would be glad to hear about.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN201"
+></A
+><B
+>Q: What do the F2 and F3 keys do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>Suppose you are editing a long line. F2 sets a mark to the command line while F3 is used to switch between
+the current position and the marked position.&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN206"
+></A
+><B
+>Q: What does the F4 key do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>Currently nothing.&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN211"
+></A
+><B
+>Q: What do F5 and F6 do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>F5 does a spelling check on the current line while F6 spell-checks the current word the cursor is at.
+Spelling is typically done by checking that filenames or directories exist. You may find it usufull when you type
+a long command line without hitting the TAB key and you notice that some filenames are not correct.
+
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd /usr/loca/bin&#60;F5&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd /usr/local/bin</B
+></TT
+></P
+></P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN221"
+></A
+><B
+>Q: What does the F7 key do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>Without F7, you would do
+
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd /tmp</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> ls demodir</B
+></TT
+><br>
+	not&nbsp;found&nbsp;blah&nbsp;blah<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> mkdir demodir</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd demodir</B
+></TT
+><br>
+<br>
+	With&nbsp;F7,&nbsp;you&nbsp;do:<br>
+	<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd /tmp</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> mkdir demodir</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd &#60;F7&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;demodir<TT
+CLASS="USERINPUT"
+><B
+>&#60;ENTER&#62;</B
+></TT
+></P
+>
+	
+Try several times to get used to it.
+F7 prints the last argument of the previous command.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN243"
+></A
+><B
+>Q: What does F8 do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>F8 searches the command history for commands that match the current line,
+up to the cursor. For example, suppose we want to invoke the history line 18.
+In a real case, we do not need to type <I
+CLASS="EMPHASIS"
+>history</I
+> to check
+out the previous commands. We typically remember them. 
+
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> history&#60;ENTER&#62;</B
+></TT
+><br>
+&nbsp;&nbsp;&nbsp;&nbsp;17	21:54&nbsp;&nbsp;&nbsp;clear	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;18	21:59	cd&nbsp;/usr/local/samba/bin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;19	21:59	ls&nbsp;-l<br>
+&nbsp;&nbsp;&nbsp;&nbsp;20	22:00	cd&nbsp;../lib<br>
+&nbsp;&nbsp;&nbsp;&nbsp;21	22:02	vi&nbsp;*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;22	22:02	cd<br>
+&nbsp;&nbsp;&nbsp;&nbsp;23	22:02	smbclient&nbsp;-L&nbsp;//SERVER/share&nbsp;-U&nbsp;test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;24	22:02	history<br>
+<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd&#60;F8&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>&#60;F8&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;../lib<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;../lib<TT
+CLASS="USERINPUT"
+><B
+> &#60;F8&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;/usr/local/samba/bin</P
+></P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN261"
+></A
+><B
+>Q: What does F9 do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>It simply clear the current screen. It is smarter than a simple <TT
+CLASS="APPLICATION"
+>clear</TT
+>
+command, it does not affect the current line you are editing.&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN267"
+></A
+><B
+>Q: What does F10 do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+><TT
+CLASS="APPLICATION"
+>ls -l</TT
+> is among the most common commands one typically types.
+F10 does just that, it executes that command. This one does affect the current line you are editing.
+A workaround is sought that does not affect the current line.&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN273"
+></A
+><B
+>Q: What does F11 do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>It shows the current load of the system and like F9, it does not affect the current line you are editing.
+On the other hand it does not appear to be enabled on Linux. It remains there until a solution is found.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN278"
+></A
+><B
+>Q: What does F12 do?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>It does standard completion, irrelevant of the smart and configurable  completion that tcsh provides.
+There are some cases that the smart completion is not smart enough. This is where F12 comes in. For example,
+suppose you have a file called lynx_bookmarks.html and you want to make a backup adding an extension. You may use
+the trick described elsewhere in this FAQ, using the F7 key, or you can do the following.
+
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cp ly&#60;TAB&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;lynx_bookmarks.html<br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;lynx_bookmarks.html<TT
+CLASS="USERINPUT"
+><B
+> ly&#60;F12&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;lynx_bookmarks.html&nbsp;lynx_bookmarks.html<TT
+CLASS="USERINPUT"
+><B
+>.old&#60;ENTER&#62;</B
+></TT
+></P
+>&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN291"
+></A
+><B
+>Q: What do these lines mean?
+
+<P
+CLASS="LITERALLAYOUT"
+>root&nbsp;has&nbsp;logged&nbsp;on&nbsp;pts/0&nbsp;from&nbsp;:0.<br>
+root&nbsp;has&nbsp;logged&nbsp;on&nbsp;pts/1&nbsp;from&nbsp;:0.<br>
+root&nbsp;has&nbsp;logged&nbsp;on&nbsp;tty1&nbsp;from&nbsp;local.</P
+></B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>They are part of the <I
+CLASS="EMPHASIS"
+>watch</I
+> facility.
+Whenever you run a command in tcsh, tcsh checks if someones has
+logged on/off the system. If so, it will print it here.
+It is quite handy to know what is going on your system.
+It is even handy if you run a non-networked system, to know where you
+have shells open.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN298"
+></A
+><B
+>Q: I was compiling an application and at the end of it I got
+
+<P
+CLASS="LITERALLAYOUT"
+>Time&nbsp;spent&nbsp;in&nbsp;user&nbsp;mode&nbsp;&nbsp;&nbsp;(CPU&nbsp;seconds)&nbsp;:&nbsp;8.810s<br>
+Time&nbsp;spent&nbsp;in&nbsp;kernel&nbsp;mode&nbsp;(CPU&nbsp;seconds)&nbsp;:&nbsp;1.030s<br>
+Total&nbsp;time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;0:11.66s<br>
+CPU&nbsp;utilisation&nbsp;(percentage)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;84.3%<br>
+Times&nbsp;the&nbsp;process&nbsp;was&nbsp;swapped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;0<br>
+Times&nbsp;of&nbsp;major&nbsp;page&nbsp;faults&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;29424<br>
+Times&nbsp;of&nbsp;minor&nbsp;page&nbsp;faults&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;28521</P
+>&#13;</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>These are some statistics that TCSH can provide (in a human readable manner)
+using a special command (time).
+With the current configuration, it is printed automatically whenever
+a process takes quite a bit of time to complete. It shows the time
+the process spent in kernel and user mode, the total time used for the
+process, the CPU utilisation (user+kernel time / total time) in %.
+The swapped times is the times the whole process was swapped.
+If you have plenty of memory, you usually get 0 here.</P
+><P
+>For the page faults, a small operating system tutorial. In modern operating
+systems, memory is used in chunks called pages. These pages can be swapped
+to the swap partition to make space for other processes. When our process
+is running and it cannot find one of its <I
+CLASS="EMPHASIS"
+>pages</I
+>, 
+it issues a <I
+CLASS="EMPHASIS"
+>fault</I
+>, or
+a <I
+CLASS="EMPHASIS"
+>page fault</I
+> and makes arrangements to have the page up. 
+The fewer the page faults, the better. The <I
+CLASS="EMPHASIS"
+>page fault</I
+> 
+terminology is a bit wierd and it comes from long time ago.
+
+<DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="./stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>the amount of page faults look to me rather a lot, perhaps they are
+faults regarding the presense of the page in the memory cache and not the
+swap. If a kernel hacker knows about this stuff and can have a look in the
+source code of TCSH, please clarify this issue.</P
+></TD
+></TR
+></TABLE
+></DIV
+></P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN311"
+></A
+><B
+>Q: I find it a bit awkward when I change back and forth directories.
+Any nice trick?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>You can use the <I
+CLASS="EMPHASIS"
+>cd -</I
+> command. It takes you to the previous directory.
+Try it once more to take you to the initial directory.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN317"
+></A
+><B
+>Q: How can I access that <I
+CLASS="EMPHASIS"
+>cd /usr/local/samba/lib/</I
+> command I type ages ago?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>As long as you remember the beginning of the command that resides in the
+history, you can access it quickly.</P
+><P
+>Do
+
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd /usr/local/samba/lib/</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd /usr/local/bin/</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd /etc/</B
+></TT
+></P
+></P
+><P
+>Now you want to go to samba/lib.
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> cd &#60;ESC p&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;/etc<TT
+CLASS="USERINPUT"
+><B
+>&#60;ESC p&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;/usr/local/bin<TT
+CLASS="USERINPUT"
+><B
+>&#60;ESC p&#62;</B
+></TT
+><br>
+	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;cd&nbsp;/usr/local/samba/lib</P
+>
+
+That is, you press several times ESC p  to go to the Previous occurence
+of a similar command. If at some point you want to go to the next command
+in the history, hit ESC n.</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN340"
+></A
+><B
+>Q: What does ^G mean?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>Means you press Ctrl-G.
+Speaking of ^G, try
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+> echo &#60;^V&#62;&#60;^G&#62;&#60;ENTER&#62;</B
+></TT
+></P
+>
+
+You will hear a BEEP.
+^V is used to <I
+CLASS="EMPHASIS"
+>mask</I
+> the next character pressed.&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN349"
+></A
+><B
+>Q: I want F4 to beep to me!</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>You need to bind F4 with the beep. Beep is ^G.
+Do
+<P
+CLASS="LITERALLAYOUT"
+>	<TT
+CLASS="PROMPT"
+>%</TT
+>&nbsp;<TT
+CLASS="USERINPUT"
+><B
+>bindkey -c &#60;^V&#62;&#60;F4&#62; "echo -n &#60;^V&#62;&#60;^G&#62;"&#60;ENTER&#62;</B
+></TT
+></P
+>
+
+That's it. You need to use it on an empty command line.&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN357"
+></A
+><B
+>Q: How can I traverse the history (backwards and forwards) restricting the search to what I have typed until now?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>This is similar to the F8 key that goes only backwards. Check the question on the F8 key. </P
+><P
+>To go backwards, use the <TT
+CLASS="USERINPUT"
+><B
+>ESC p</B
+></TT
+> combination. 
+To go forwards, use the <TT
+CLASS="USERINPUT"
+><B
+>ESC n</B
+></TT
+> combination. 
+p is for previous and n for next. You hit first ESC, then you hit either p or n.&#13;</P
+></DIV
+></DIV
+><DIV
+CLASS="QANDAENTRY"
+><DIV
+CLASS="QUESTION"
+><P
+><BIG
+><A
+NAME="AEN365"
+></A
+><B
+>Q: How can I make it so that these .tcshrc* files are added to each newly created user?</B
+></BIG
+></P
+></DIV
+><DIV
+CLASS="ANSWER"
+><P
+><B
+>A: </B
+>You need to copy them to the <TT
+CLASS="FILENAME"
+>/etc/skel</TT
+> directory.
+Then, the utility that creates new users will automatically include the tcsh
+configuration files. We assume that the tcsh shell has been chosen for the new user.
+In the future a script will be written that installs these files on a per-user basis.</P
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x106.html"
+>&#60;&#60;&#60; Previous</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="tcshrc.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>I want to make a system installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

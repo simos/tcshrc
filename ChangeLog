@@ -1,0 +1,122 @@
+2004-08-13  Simos Xenitellis  <simos74@gmx.net>
+
+	* Releasing version 1.6.0.
+
+2004-08-13  Simos Xenitellis  <simos74@gmx.net>
+
+	* src/tcshrc.bindkey: Removed F11 bindkey due to usability issues.
+
+2004-08-13  Simos Xenitellis  <simos74@gmx.net>
+
+	* src/tcshrc.local: Added file for local changes to the tcshrc package.
+	* src/tcshrc.complete: Updated file from tcsh-6.13.0
+	* src/tcshrc.bindkey: Updated with sections for linux, freebsd, darwin
+	and default (catch all)
+	* src/tcshrc.set: Changed default prompt.
+	* tcshrc.spec: Updated to new version.
+
+2003-04-16  Simos Xenitellis  <simos74@gmx.net>
+
+	* src/tcshrc.complete: Added apt-get/apt-cache completions,
+	by Miklos.
+
+2003-04-04  Simos Xenitellis  <simos74@gmx.net>
+
+	* tcshrc.spec: Added RPM spec file.
+
+	* tcsh_config: Renamed to tcshrc_config.
+
+2003-04-02  Simos Xenitellis  <simos74@gmx.net>
+
+	* Releasing 1.2.0.
+
+	* src/tcshrc.bindkey: Cleanup, so that other OSes can by used.
+	Needs some testing though to be sure all are ok.
+
+	* src/tcshrc.bindkey: Updates for FreeBSD, contributed by
+	scott <stock@fishcracker.com>.
+
+2003-04-01  Simos Xenitellis  <simos74@gmx.net>
+
+	* src/tcshrc.set: Updated cwdcmd variable from submission of 
+	Hunter Eidson.
+
+	* src/tcshrc.complete: Updated (leeched) with newer version from 
+	tcsh-6.12.00.
+
+	* Changed .tcshrc* files in distribution, removed dot and placed
+	in src/ directory.
+
+	* Added files to SF CVS. It's true. Honest.
+
+2001-09-02  root  <simos@hellug.gr>
+
+	* .tcshrc.complete: If domainname is not there,
+	it is not invoked, thus does not show error.
+
+2001-09-02  Simos Xenitellis  <simos@hellug.gr>
+
+	* Added /usr/games in the path.
+	The more=less alias is enabled if less is installed.
+	The vi=vim alias is enabled if vim is installed.
+	Added "../" alias to do "cd ..".
+	Added "/" alias to cd "cd /".
+	Enabled the help command to print the manpage.
+	Now pressing F1 on "ftp ftp.kernel.org" brings man-page
+	of "ftp".
+	Enhanced the ESC-left-arrow, ESC-right-arrow bindings.
+	Added system/systemwide installation options.
+	Added tcsh_config configuration script for system and user installation.
+	Updated documentation with the new installation method/files.
+	
+2001-01-28  Simos Xenitellis  <simos@hellug.gr>
+
+	* Updated zcat completion, added .gz extension
+
+2001-01-21  Simos Xenitellis  <simos@hellug.gr>
+
+	* Minor: added zip/xpdf completion rules
+
+	* .tcshrc.complete was resetting the complete=enhance
+	setting. This has been fixed.
+
+2001-01-18  Simos Xenitellis  <simos@hellug.gr>
+
+	* Added patch file from previous version.
+	Enables users to find differences easily.
+
+	* Enabled autoexpand (history-aided expansion)
+
+	* set complete=enhance (kaspar@lifosa.com)
+	a) ignore case, b) .-_ are word separators
+	c) -_ are equivalent.
+
+	* Fixed lynx completion, modified mpg123 completion.
+
+	* Added "." (pwd), ".." (cd ..), "-" (cd -)
+	aliases. 
+
+	* Updated complete.tcsh from the one in
+	tcsh-6.10.
+
+2001-01-08  Simos Xenitellis  <simos@hellug.gr>
+
+	* Enabled the helpcommand alias. It was set
+	as "set help..." incorrectly. [Peter Solodov]
+	* Fixes in .tcshrc.bindkey to work under X.
+	Now F1, F2, F3, F4, F5 work, undocumented yet..
+
+2000-12-08  Simos Xenitellis  <simos@hellug.gr>
+
+	* Created directory doc/ with tcshrc.sgml.
+	It's a preliminary documentation file and
+	there are outpout files in DVI/PS/PDF/HTML.
+
+2000-09-03  Simos Xenitellis  <root@pc96.ma.rhbnc.ac.uk>
+
+	* Added fixes to .tcshrc from contributions
+	  Checks if it runs for root or not
+	  Does not pollute the "path" variable
+	  Added a couple more entries in the FAQ
+	  Added a DIFF file with changes between previous version
+	  

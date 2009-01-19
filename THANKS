@@ -1,0 +1,14 @@
+
+Contributions from:
+
+1. Heather Downs <heather@netlens.com> for the "set -f -l" flags
+2. Spencer White <spencer@nexthost.com> for "if root" condition 
+3. Carlos Duarte <cgd@teleweb.pt> for his huge list of DOT files
+4. Amine Chelghaf <chelghaf@yahoo.fr> for his submission of a draft 
+tcshrc manual and enabling me to produce a draft DocBook version of it.
+5. Peter Solodov <solodov@bigfoot.com> for pointing out the "set helpcommand" bug.
+6. Kaspar <kaspar@lifosa.com> for mentioning the "complete=enhance" setting.
+7. Miklos Quartus <miklos.quartus@nokia.com>, bug in tcshrc.complete, 'make'.
+8. Hunter Eidson (eeidson) (SF.net patch), adjust the title bar of the terminal window. 
+9. scott <stock@fishcracker.com>, for FreeBSD bindkey values.
+10. Martin Bock, for precmd e-mail.

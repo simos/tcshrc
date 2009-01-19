@@ -1,0 +1,12 @@
+
+In no order:
+
+a. Investigate why F11 (load average) is deactivated.
+b. Enhance the tutorial
+DONE c. Figure out how to put the scripts in /etc/skel/
+DONE d. Add script "tcshrc_install" for per user installation.
+e. Get usability feedback from users.
+f. Debian specific completions
+g. Bring in the changes of Zhang Weiwu <zhangweiwu@realss.com> from CVS!!!
+
+For more comments, contact Simos Xenitellis <simos74@gmx.net>
