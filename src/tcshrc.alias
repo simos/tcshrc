@@ -101,31 +101,38 @@ alias helpcommand man
 # -i eth0  means only the Ethernet interface. In some distros, the loopback is
 # shown too which clutters the output.
 alias log_tcpdump 'clear ; exec tcpdump -s 2000 -n -i eth0'
+
 # This is a console lock. -a means that the user cannot switch consoles,
 # needs to unlock this console to continue. Before using this, check that
 # the SysRq linux kernel combination is disabled. If not, users may be able to 
 # to kill the "vlock" process and access the other terminals.
 alias log_lock 'clear; exec vlock -a'
+
 # Put the following on a free console and leave it there.
 # Even when the logs are circulating, it will carry on.
 # If someone kills this process, it automatically exits due to the "exec".
 alias log_messages 'clear; exec tail -f /var/log/messages --follow=name --retry'
+
 # This creates a PostScript file out of a .txt one, in a economic way.
 # the output file is "output.ps" in all cases (carefull with overwrites..)
 # You need the "enscript" package installed.
 # It sets Duplex mode, prints in landscape two pages on each side of the
 # paper.
 alias enscriptit 'enscript -o output.ps -DDuplex:true -DTumble:true -r -M A4 -2'
+
 # If you are on Sourceforge, this may be handy. Also try RSA authentication
 # so that you do not need to put a password to connect. It is also handy with
 # "scp".
 # You can run it as "shell1 -l my_username" without modifying the following.
 alias shell1 'slogin -x shell1.sourceforge.net -l CHANGE_WITH_YOUR_USERNAME_IN_.tcshrc.alias'
+
 # This is another way to get RFCs nicely. Just do "rfcget 1234" 
 # to get the appropriate RFC. Needs the ncftp package.
 alias rfcget 'ncftpget ftp://ftp.isi.edu/in-notes/rfc\!^.txt' 
+
 # This erases the backup files from emacs, vi (if enabled) and others.
 # It is disabled by default.
 #alias clean 'rm -f  *~'
 # This is useful to translators checking .po files.
 alias msgcheck 'msgfmt -o /dev/null --statistics --strict --verbose'
+
