@@ -8,16 +8,16 @@
 ## Standard aliases - security
 # "-i" asks for confirmation when deleting. This is good.
 # In the "dangerous" section there are aliases for non-confirmation.
-alias rm 	'rm -i'
-alias cp 	'cp -i'
-alias mv 	'mv -i'
+alias rm 	'rm -v -i'
+alias cp 	'cp -v -i'
+alias mv 	'mv -v -i'
 
 ## Standard aliases - CPM/MSDOS heritage
-alias del   	'rm -i'
+alias del   	'rm -v -i'
 alias cls   	'clear'
 # "-p" lets you create a path structure with one command, ex. mkdir -p /a/b/c
-alias md    	'mkdir -p'
-alias rd    	'rmdir'
+alias md    	'mkdir -v -p'
+alias rd    	'rmdir -v'
 
 ## Standard aliases - convenience
 # Color syntax
