@@ -49,6 +49,9 @@ source $HOME/.tcshrc.bindkey
 #        completions for interactive shells
 source $HOME/.tcshrc.complete
 
+#	local settings
+source $HOME/.tcshrc.local
+
 #        commands for interactive shells
 ## FIXME this is an example, shows date and current directory
 date
