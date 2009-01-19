@@ -9,6 +9,20 @@ If not, you may be able to use "chsh" to change your shell to "/bin/tcsh".
 There is a Makefile in the project directory. Type “make” to view 
 the installation options.
 
+  % make 		display this help
+
+  % make backup		take a backup of the original .tcshrc
+                        (it is saved as .tcshrc.ORIGINAL)
+                        you should run this once in the begining
+                        otherwise you may overwrite the backup
+
+  % make install	install the new .tcshrc* files in
+                        the current directory
+
+  % make systeminstall	install the new .tcshrc* files in
+                        /usr/local/share/tcshrc, then add
+                        tcshrc_config to /usr/local/bin/
+
 Now read the FAQ file on the new functionality and how to use it properly.
 
 For more information, contact Simos Xenitellis <simos.lists@googlemail.com>
