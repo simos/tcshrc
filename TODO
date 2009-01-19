@@ -1,12 +1,14 @@
 
 In no order:
 
-a. Investigate why F11 (load average) is deactivated.
-b. Enhance the tutorial
-DONE c. Figure out how to put the scripts in /etc/skel/
-DONE d. Add script "tcshrc_install" for per user installation.
-e. Get usability feedback from users.
-f. Debian specific completions
-g. Bring in the changes of Zhang Weiwu <zhangweiwu@realss.com> from CVS!!!
+*. Investigate why F11 (load average) is deactivated.
+*. Enhance the tutorial
+DONE *. Figure out how to put the scripts in /etc/skel/
+DONE *. Add script "tcshrc_install" for per user installation.
+*. Get usability feedback from users.
+*. Debian specific completions
+*. Bring in the changes of Zhang Weiwu <zhangweiwu@realss.com> from CVS!!!
+*. The documentation mentions that the configuration files in the project start with a dot. We need to update the docs because now in src/, there files do not start with a dot.
+*. Advertise on tcshrc.sf.net that we now use github.com for development.
 
-For more comments, contact Simos Xenitellis <simos74@gmx.net>
+For more comments, contact Simos Xenitellis <simos.lists@googlemail.com>
