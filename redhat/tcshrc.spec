@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root,root)/usr/share/tcshrc/tcshrc.set
 
 %changelog
-* Fri Aug 12 2004 Simos Xenitellis <simos74@gmx.net>
+* Fri Aug 12 2004 Simos Xenitellis <simos.lists@googlemail.com>
 - New version including bugfixes (1.5.0).
-* Fri Apr  3 2003 Simos Xenitellis <simos74@gmx.net>
+* Fri Apr  3 2003 Simos Xenitellis <simos.lists@googlemail.com>
 - Initial RPM version (1.2.0).

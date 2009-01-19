@@ -1,6 +1,6 @@
 #############################################################################
 ##
-## Makefile             2Sep2001, Simos Xenitellis (simos74@gmx.net)
+## Author: Simos Xenitellis (simos.lists@googlemail.com)
 ##
 
 ## This is the makefile, part of the TCSHRC project
