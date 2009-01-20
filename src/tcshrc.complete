@@ -717,7 +717,11 @@ endif
 
     if (! $?MANPATH) then
 	if (-r /usr/share/man) then
-	    setenv MANPATH /usr/share/man:
+	    if (-r /usr/local/man) then
+	       setenv MANPATH /usr/share/man:/usr/local/man:
+            else
+               setenv MANPATH /usr/share/man:
+	    endif
 	else
 	    setenv MANPATH /usr/man:
 	endif
