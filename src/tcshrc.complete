@@ -504,9 +504,10 @@ endif
     complete exec	'p/1/c/'
     complete ghostview	'p/*/f:*.ps/'
     complete gv		'p/*/f:*.ps/'
-    complete ifconfig	'p@1@`ifconfig -l`@' 'n/*/(range phase link netmask \
-			mtu vlandev vlan metric mediaopt down delete \
-			broadcast arp debug)/'
+# -l parameter is not supported in Linux.
+#    complete ifconfig	'p@1@`ifconfig -l`@' 'n/*/(range phase link netmask \
+#			mtu vlandev vlan metric mediaopt down delete \
+#			broadcast arp debug)/'
     complete imake	'c/-I/d/'
     complete ipfw 	'p/1/(flush add delete list show zero)/' \
 			'n/add/(allow permit accept pass deny drop reject \
