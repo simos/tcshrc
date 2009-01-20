@@ -43,6 +43,8 @@ install:
 	@/bin/cp -f src/tcshrc.complete $(HOME)/.tcshrc.complete
 	@/bin/cp -f src/tcshrc.hosts    $(HOME)/.tcshrc.hosts
 	@/bin/cp -f src/tcshrc.set      $(HOME)/.tcshrc.set
+	@test -e $(HOME)/.tcshrc.local || echo "You already have a ~/.tcshrc.local. Not overwriting."
+	@test ! -e $(HOME)/.tcshrc.local || /bin/cp src/tcshrc.local $(HOME)/.tcshrc.local
 	@/bin/cp -u src/tcshrc.local 	$(HOME)/.tcshrc.local
 	@echo " done."
 
